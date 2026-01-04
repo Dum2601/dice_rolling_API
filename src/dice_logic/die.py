@@ -21,9 +21,7 @@ class Die:
         return self._rolling_dices()
 
 
-class RpgDices(Die):
-    pass
 
 
-die = Die().die_result
-print(die)
+# die = Die().die_result
+# print(die)
