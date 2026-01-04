@@ -21,8 +21,6 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
-
-import json
 from die import Die
 
 class RpgDices(Die):
@@ -40,7 +38,7 @@ class RpgDices(Die):
                 "modifiers_sum": _modifiers_sum,
                 "total": value + _modifiers_sum
             })
-        return json.dumps(results, indent=4)
+        return results
 
     @property
     def rpg_dice_with_modifiers(self):
@@ -48,4 +46,7 @@ class RpgDices(Die):
 
 
 # rpg_die = RpgDices(20, 2, modifiers=[-1])
+# print(rpg_die.rpg_dice_with_modifiers)
+
+# rpg_die = RpgDices(20, 2)
 # print(rpg_die.rpg_dice_with_modifiers)

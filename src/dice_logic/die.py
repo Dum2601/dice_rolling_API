@@ -22,7 +22,6 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 
-import json
 from random import randint
 
 class Die:
@@ -56,8 +55,8 @@ class Die:
                 "die_value": value
 
             })
-        return json.dumps(_results, indent=4)
+        return _results
 
 
-die = Die(6, 3)
-print(die.die_result_json)
+# die = Die(6, 3)
+# print(die.die_result_json)
