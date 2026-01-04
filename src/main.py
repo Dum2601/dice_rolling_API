@@ -21,38 +21,8 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
+from flask import Flask
+from src.routes.api import app
 
-from random import randint
-
-class Die:
-    def __init__(self, sides: int = 6, quantity: int = 1):
-        self.sides = sides
-        self.quantity = quantity
-
-    def _dice_value(self) -> int:
-        return randint(1, self.sides)
-
-    def _all_dice_values(self) -> list[int]:
-        values: list[int] = []
-        for _ in range(self.quantity):
-            values.append(self._dice_value())
-        return values
-
-    def _rolling_dices(self) -> list[int]:
-        return self._all_dice_values()
-
-    @property
-    def die_result(self) -> list[int]:
-        return self._rolling_dices()
-
-    @property
-    def die_result_json(self):
-        _results: list[dict] = []
-        _dice_values = self.die_result
-        for value in _dice_values:
-            _results.append({
-
-                "die_value": value
-
-            })
-        return _results
+if __name__ == "__main__":
+    app.run(debug=True)
