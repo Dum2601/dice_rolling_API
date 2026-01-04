@@ -1,3 +1,4 @@
+import json
 from random import randint
 
 class Die:
@@ -16,12 +17,16 @@ class Die:
 
     def _rolling_dices(self) -> list[int]:
         return self._all_dice_values()
+
     @property
     def die_result(self) -> list[int]:
         return self._rolling_dices()
 
+    @property
+    def die_result_json(self) -> str:
+
+        # return json.dumps(self.die_result, indent=4)
 
 
-
-# die = Die().die_result
-# print(die)
+die = Die(6, 3)
+print(die.die_result_json)
