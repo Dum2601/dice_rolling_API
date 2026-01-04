@@ -1,0 +1,18 @@
+[project]
+name = "dice-rolling-api"
+version = "0.1.0"
+description = "\"A Die abstraction in python which returns values rolled\""
+authors = [
+    {name = "Dum2601",email = "Doug_b_souza@hotmail.com"}
+]
+license = {text = "MIT"}
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "flask (>=3.1.2,<4.0.0)"
+]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
