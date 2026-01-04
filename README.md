@@ -17,7 +17,7 @@ The API is built using **Flask** and packaged with **Poetry** for dependency man
 
 ```bash
 git clone https://github.com/Dum2601/dice_rolling_API.git
-cd dice-api
+cd dice_rolling_API
 ```
 
 2. **Install dependencies using Poetry**
@@ -141,7 +141,7 @@ A API é construída usando **Flask** e gerenciada com **Poetry** para controle 
 
 ```bash
 git clone https://github.com/Dum2601/dice_rolling_API.git
-cd dice-api
+cd dice_rolling_API
 ```
 
 2. **Instale as dependências usando Poetry**
