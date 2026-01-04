@@ -7,14 +7,14 @@ class RpgDices(Die):
         self.modifiers = modifiers or []
 
     def _val_with_modifiers(self):
-        modifiers_sum: int = sum(self.modifiers) if self.modifiers else 0
-        dice_values = self.die_result
+        _modifiers_sum: int = sum(self.modifiers) if self.modifiers else 0
+        _dice_values = self.die_result
         results = []
-        for value in dice_values:
+        for value in _dice_values:
             results.append({
                 "die_value": value,
-                "modifiers_sum": modifiers_sum,
-                "total": value + modifiers_sum
+                "modifiers_sum": _modifiers_sum,
+                "total": value + _modifiers_sum
             })
         return json.dumps(results, indent=4)
 
