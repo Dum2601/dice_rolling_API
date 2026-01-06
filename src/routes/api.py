@@ -24,6 +24,7 @@ SOFTWARE.
 from src.dice_logic.die import Die
 from src.dice_logic.rpg_die import RpgDices
 from flask import Flask, jsonify, request
+from src.routes.utils.util_functions import format_modifiers
 
 app = Flask(__name__)
 
@@ -45,10 +46,7 @@ def rpg_dice():
     modifiers_str = request.args.get("modifiers", "")  # example: "1,2"
 
     modifiers = []
-    if modifiers_str:
-        for m in modifiers_str.split(","):
-            if m:
-                modifiers.append(int(m))
+    format_modifiers(modifiers_str, modifiers)
 
     dice = RpgDices(sides=sides, quantity=quantity, modifiers=modifiers)
     return jsonify(dice.rpg_dice_json)
