@@ -5,7 +5,7 @@ class RpgDices(Die):
         super().__init__(sides, quantity)
         self.modifiers = modifiers or []
 
-    def _val_with_modifiers(self):
+    def _val_with_modifiers(self) -> list[dict]:
         _modifiers_sum: int = sum(self.modifiers) if self.modifiers else 0
         results = []
         for value in self.die_result:
@@ -17,5 +17,5 @@ class RpgDices(Die):
         return results
 
     @property
-    def rpg_dice_json(self):
+    def rpg_dice_json(self) -> list[dict]:
         return self._val_with_modifiers()

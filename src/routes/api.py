@@ -31,7 +31,7 @@ app = Flask(__name__)
 @app.route("/die")
 def die_values():
     # use route: http://127.0.0.1:5000/die for 1 die with 6 sides
-    # or http://127.0.0.1:5000/die?sides=<int>&quantity=<int> for choose the quantity of dice and/or sides
+    # or Example: http://127.0.0.1:5000/die?sides=20&quantity=2 for choose the quantity of dice and/or sides
     sides = int(request.args.get("sides", 6))  # default 6
     quantity = int(request.args.get("quantity", 1))  # default 1
     die_result = Die(sides, quantity).die_result_json
@@ -40,7 +40,7 @@ def die_values():
 @app.route("/rpg-dice")
 def rpg_dice():
     # use route: http://127.0.0.1:5000/rpg-dice for 1 die with 6 sides
-    # or http://127.0.0.1:5000/rpg-dice?sides=8&quantity=2&modifiers=1,2 for choose the quantity of dice, modifiers and/or sides
+    # or http://127.0.0.1:5000/rpg-dice?sides=20&quantity=2&modifiers=1,2 for choose the quantity of dice, modifiers and/or sides
     sides = int(request.args.get("sides", 6))
     quantity = int(request.args.get("quantity", 1))
     modifiers_str = request.args.get("modifiers", "")  # example: "1,2"

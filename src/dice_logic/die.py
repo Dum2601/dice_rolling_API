@@ -46,7 +46,7 @@ class Die:
         return self._rolling_dices()
 
     @property
-    def die_result_json(self):
+    def die_result_json(self) -> list[dict]:
         _results: list[dict] = []
         _dice_values = self.die_result
         for value in _dice_values:
