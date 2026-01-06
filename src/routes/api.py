@@ -34,8 +34,8 @@ def die_values():
     # or http://127.0.0.1:5000/die?sides=<int>&quantity=<int> for choose the quantity of dice and/or sides
     sides = int(request.args.get("sides", 6))  # default 6
     quantity = int(request.args.get("quantity", 1))  # default 1
-    die = Die(sides, quantity).die_result_json
-    return jsonify(die)
+    die_result = Die(sides, quantity).die_result_json
+    return jsonify(die_result)
 
 @app.route("/rpg-dice")
 def rpg_dice():
